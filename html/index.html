@@ -1,0 +1,365 @@
+<html>
+<head> 
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script> 
+<script src="js/jquery.tablesorter.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
+<script src="js/dateformat.js"></script>
+<script src="js/autosize.min.js"></script>
+<script src="js/feiertag.js"></script>
+<script src="js/dl.js"></script>
+<script src="js/jquery.noty.packaged.min.js"></script>
+<script src="js/noty.defaulttheme.js"></script>
+<script src="js/jquery.tablesorter.widgets.js"></script>
+<script src="js/widget-columnSelector.js"></script>
+<script src="js/widget-print.js"></script>
+
+<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+
+<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" id="" media="print, projection, screen" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" id="" media="print, projection, screen" />
+<link rel="stylesheet" href="css/datetimepicker.css" type="text/css" id="" media="print, projection, screen" />
+<link rel="stylesheet" href="css/dl.css" type="text/css" id="" media="print, projection, screen" />
+</head>
+<body>
+<div id="menu" class="dlMenu">
+	<button class="menuLeft"  id="showDl">dienstleistungen</button>
+	<button class="menuLeft"  id="showCustTec">kunden/techniker</button>
+	<!--<button class="menuLeft"  id="switchDebug">debug</button>-->
+
+	<button class="menuRight" id="logout">logout</button>
+</div>
+<div id="subMenu" class="subMenu">
+	<div class="dateselector">
+		<select id="dateSelectorType">
+			<option value="Tage">Tage</option>
+			<option value="KW" selected>KW</option>
+			<option value="Monate">Monate</option>
+			<option value="Quartale">Quartale</option>
+			<option value="Jahre">Jahre</option>
+			<option value="beliebig">beliebig</option>
+		</select>
+		&nbsp;
+	</div> 
+	<div class="dateselector" id="TageDiv">
+		datepicker
+	</div>
+	<div class="dateselector" id="KWDiv">
+		<button class="subMenuItem" id="prevKW">&lt;</button>
+	        <select id="KW" class="subMenuItem">
+			<option value="1">KW 1</option>
+			<option value="2">KW 2</option>
+			<option value="3">KW 3</option>
+			<option value="4">KW 4</option>
+			<option value="5">KW 5</option>
+			<option value="6">KW 6</option>
+			<option value="7">KW 7</option>
+			<option value="8">KW 8</option>
+			<option value="9">KW 9</option>
+			<option value="10">KW 10</option>
+			<option value="11">KW 11</option>
+			<option value="12">KW 12</option>
+			<option value="13">KW 13</option>
+			<option value="14">KW 14</option>
+			<option value="15">KW 15</option>
+			<option value="16">KW 16</option>
+			<option value="17">KW 17</option>
+			<option value="18">KW 18</option>
+			<option value="19">KW 19</option>
+			<option value="20">KW 20</option>
+			<option value="21">KW 21</option>
+			<option value="22">KW 22</option>
+			<option value="23">KW 23</option>
+			<option value="24">KW 24</option>
+			<option value="25">KW 25</option>
+			<option value="26">KW 26</option>
+			<option value="27">KW 27</option>
+			<option value="28">KW 28</option>
+			<option value="29">KW 29</option>
+			<option value="30">KW 30</option>
+			<option value="31">KW 31</option>
+			<option value="32">KW 32</option>
+			<option value="33">KW 33</option>
+			<option value="34">KW 34</option>
+			<option value="35">KW 35</option>
+			<option value="36">KW 36</option>
+			<option value="37">KW 37</option>
+			<option value="38">KW 38</option>
+			<option value="39">KW 39</option>
+			<option value="40">KW 40</option>
+			<option value="41">KW 41</option>
+			<option value="42">KW 42</option>
+			<option value="43">KW 43</option>
+			<option value="44">KW 44</option>
+			<option value="45">KW 45</option>
+			<option value="46">KW 46</option>
+			<option value="47">KW 47</option>
+			<option value="48">KW 48</option>
+			<option value="49">KW 49</option>
+			<option value="50">KW 50</option>
+			<option value="51">KW 51</option>
+			<option value="52">KW 52</option>
+			<option value="53">KW 53</option>
+	 	</select>
+	 	<select id="yearKW" class="subMenuItem"></select>
+		      <button id="nextKW" class="subMenuItem">&gt;</button>
+	</div>
+	<div class="dateselector" id="MonateDiv">
+		<button class="subMenuItem" id="prevMonate">&lt;</button>
+		        <select id="Monate" class="subMenuItem">
+			        <option value="1">Januar   </option>
+			        <option value="2">Februar  </option> 
+			        <option value="3">März     </option>
+			        <option value="4">April    </option>
+			        <option value="5">Mai      </option>
+			        <option value="6">Juni     </option>
+			        <option value="7">Juli     </option>
+			        <option value="8">August   </option>
+			        <option value="9">September</option>
+			        <option value="10">Oktober </option>
+			        <option value="11">November</option>
+			        <option value="12">Dezember</option>
+			        </option>
+			</select>
+			<select id="yearMonate" class="subMenuItem"></select>
+			<button id="nextMonate" class="subMenuItem">&gt;</button>
+		</div>
+		<div class="dateselector" id="QuartaleDiv">
+			<button class="subMenuItem" id="prevQuartale">&lt;</button>
+			<select id="Quartale" class="subMenuItem">
+				<option value="1">Q1</option>
+				<option value="2">Q2</option> 
+				<option value="3">Q3</option>
+				<option value="4">Q4</option>
+			</select>
+		      <select id="yearQuartale" class="subMenuItem"></select>
+		      <button id="nextQuartale" class="subMenuItem">&gt;</button>
+		</div>
+		<div class="dateselector" id="JahreDiv">
+			<button class="subMenuItem" id="prevJahre">&lt;</button>
+			<select id="yearJahre" class="subMenuItem"></select>
+			<button class="subMenuItem" id="nextJahre">&gt;</button>
+		</div>
+		<div class="dateselector" id="beliebigDiv">
+			datepicker - datepicker
+		</div>
+		<button class="menuRight"  id="switchEditable" style="width: 135;">bearbeiten: aus</button>
+		<button class="menuRight"  id="switchCompact" style="width: 130;">kompakt: an</button>
+		<button class="menuRight print">drucken</button>
+		<div class="ColumnSelectorWrapper menuRight" id="TecCustTableColumns">
+			<input id="colSelectTecCustTable" type="checkbox" class="hidden" />
+			<label class="columnSelectorButton button" for="colSelectTecCustTable">&nbsp;spalten&nbsp;</label>
+			<div id="columnSelectorTecCustTable" class="columnSelector"></div>
+		</div>
+		<div class="ColumnSelectorWrapper menuRight" id="UserDlTableColumns">
+			<input id="colSelectUserDlTable" type="checkbox" class="hidden" />
+			<label class="columnSelectorButton button" for="colSelectUserDlTable">&nbsp;spalten&nbsp;</label>
+			<div id="columnSelectorUserDlTable" class="columnSelector"></div>
+		</div>
+
+<!--	        <button class="menuRight" id="showDeleted">show deleted</button>-->
+</div>
+<div id="debug" class="debug">debug output...</div>
+<div id="login" title="Bitte melde Dich an">
+	<fieldset>
+		<legend>Login</legend>
+		<label for="loginName" align="right"> Name: </label><br>
+		<input type="text" id="loginName" placeholder="Windows-Konto"><br><br>
+		<label for="loginPass"> Passwort: </label><br>
+		<input id="loginPass" type="password" autocomplete="off" placeholder="Windows-Passwort"><br><br>
+		<input type="button" value="login" id="loginButton">
+	</fieldset>
+</div>
+<div id="loadingDiv"></div>
+<div id="editDlDiv">
+</div>
+<div id="showDlHistoryDiv">
+</div>
+<div id="requestTecCustDiv">
+	<table id="TecCustTable" class="tablesorter">
+		<thead>
+			<tr id="tecCustHead"></tr>
+		</thead>
+		<tbody id="tecCustBody">
+		</tbody>
+		<tfoot>
+			<tr id="tecCustFoot"></tr>
+		</tfoot>
+	</table>
+</div>
+<div id="requestUserDlDiv">
+	<table id="UserDlTable" class="tablesorter tablefixed">
+		<thead>
+			<tr>
+				<th width="70" title="Techniker" class="filter-select">
+					Tec
+				</th>
+				<th width="45" title="Kunde (Kurzbezeichnung)">
+					Kunde
+				</th>
+				<th  width="130" title="Kunde">
+					Kunde Langform
+				</th>
+				<th>
+					Projekt
+				</th>
+				<th width="50" data-selector-name="Aufwand" title="Arbeitszeit<br>1 ZE = 15 Minuten">
+					ZE<sub>Arbeit</sub>
+				</th>
+				<th title="Wochentag" data-selector-name="Wochentag" width="10">
+				</th>
+				<th width="100" data-selector-name="Abschlusszeit" title="Abschlusszeit der Dienstleistungserbringung">
+					Zeit<sub>DL</sub>
+				</th>
+				<th width="100" data-selector-name="Änderungszeit" title="Zeit der letzten Modifikation des Eintrags">
+					Zeit<sub>Edit</sub>
+				</th>
+				<th width="50" data-selector-name="Fahrtzeit" title="An- und Abfahrtszeit<br>1 ZE = 15 Minuten<br>0 ZE = Remoteeinsatz">
+					ZE<sub>Fahrt</sub>&nbsp;
+				</th>
+				<th data-selector-name="Bearbeiter" width="60">
+					Editor
+				</th>
+				<th width="10" data-selector-name="€-Status" class="filter-select" title="<img src='img/notbilled.png'>: neu<br><img src='img/euro-green.png'>: abgerechnet">
+					&euro;
+				</th>
+				<th data-selector-name="id" width="40">
+					id&nbsp;&nbsp;&nbsp;&nbsp;
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="noprint">
+				<td>
+					<input tabindex=1 class="input" id="nameTec" placeholder="default: selbst">
+				</td>
+				<td>
+					<input tabindex=2 class="input" id="kunde" valign="top" placeholder="Name/Abkürzung">
+				</td>
+				<td>
+					-
+				</td>
+				<td class="multiline">
+					<textarea tabindex=3 rows="1" class="input" id="projekt" placeholder="max. 256 Zeichen"></textarea>
+				</td>
+				<td align="right">
+					<input tabindex=4 id="aufwand" size=3 class="input number">
+				</td>
+				<td>
+				</td>
+				<td>
+					<input id="timeDl" type="text" class="input" size="8" placeholder="default: jetzt">
+				</td>
+				<td>
+					jetzt
+				</td>
+				<td align="right">
+					<input tabindex=5 class="input number" size=3 id="anfahrt">
+				</td>
+				<td>
+					selbst
+				</td>
+				<td>
+				</td>
+				<td align="center" title="Enter bzw. CTRL-Enter tut auch">
+					<button tabindex=6 id="addLine" type="button">
+						<img src="img/save.png">
+					</button>
+				</td>
+			</tr>
+		</tbody>
+		<tbody id="userDl">
+			<!-- <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr> -->
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>
+					Total
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+				<th align="right" id="totalTime">
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+				<th align="right" id="totalTimeAnfahrt">
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+				<th>
+				</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<div id="custDl"></div>
+<div id="dlTimediff" title="Dienstleistung hinzufügen?">
+  <p>Die Zeit der Dienstleitung ist <b><span id="dlTimeText">xxx</span></b>. Soll die Dienstleistung wirklich so eingetragen werden?</p>
+</div>
+<div id="dlHistory">
+	<table class="tablesorter" id="dlHistoryTable">
+		<thead>
+			<tr>
+				<th>
+					Aktiv
+				</th>
+				<th>
+					Techniker
+				</th>
+				<th>
+					Kunde
+				</th>
+				<th>
+					Projekt
+				</th>
+				<th>
+					ZE<sub>arbeit</sub>
+				</th>
+				<th>
+					Zeit<sub>DL</sub>
+				</th>
+				<th>
+					Zeit<sub>Edit</sub>
+				</th>
+				<th>
+					ZE<sub>Fahrt</sub>
+				</th>
+				<th>
+					Editor
+				</th>
+				<th>
+				&euro;	
+				</th>
+				<th>
+					id
+				</th>
+			</tr>
+		</thead>
+		<tbody id="dlHistoryTableBody">
+		</tbody>
+	</table>
+</div>
+<div id="newCust" title="Kunde nicht gefunden!" >
+	Soll ein neuer Kunde angelegt werden?<br>
+	<fieldset>
+		<legend>Kundendaten</legend>
+		<label for="kurz"> Kurzbezeichnung: </label><br>
+		<input type="text" name="kurz" id="newCustKurz" placeholder="2-4 Zeichen" autofocus><br><br>
+		<label for="name"> Vollst&auml;ndiger Name: </label><br>
+		<input type="text" name="name" id="newCustName" placeholder="5-64 Zeichen"><br><br>
+	</fieldset>
+</div>
+</body></html>
+
