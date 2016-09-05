@@ -30,7 +30,7 @@ Installation:
 - config.pl anpassen mit LDAP und DB informationen
 
 Screenshots:
-![Screenshot](/screenshots/1.png?raw=true)
+![Screenshot](https://raw.githubusercontent.com/zundg/reporting/master/screenshots/1.png?raw=true)
 ![Screenshot](/screenshots/2.png?raw=true)
 ![Screenshot](/screenshots/3.png?raw=true)
 ![Screenshot](/screenshots/4.png?raw=true)
