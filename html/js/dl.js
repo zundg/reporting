@@ -60,7 +60,6 @@ function htmlNoBr(arg) {
 	x = x.replace(/'/, "&#39;");
 	x = x.replace('dl-ellipse', "&#x2026;");
 	x = x.replace(/"/g, "&quot;");
-	x = x.replace(/^OTRS #(\d+):/, "OTRS <a target='_blank' href='https://ticket.linkprotect.de/otrs/index.pl?Action=AgentTicketSearch&Subaction=Search&TicketNumber=$1'>#$1:</a>"); 
 	return x;
 }
 function html(arg) {
